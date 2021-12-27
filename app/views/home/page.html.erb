@@ -1,0 +1,12 @@
+<h1>Welcome !</h1>
+<div class="container">
+    <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to 'Register', new_user_registration_path %><br>       
+        <%= link_to 'Sign In', new_user_session_path%> <br>
+        <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post %><br>
+        <%= link_to "Sign in with LinkedIn", user_linkedin_omniauth_authorize_path, method: :post %><br>
+    <% end %>
+
+</div>
